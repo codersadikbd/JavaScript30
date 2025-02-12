@@ -100,16 +100,21 @@
         '.inbox input[type="checkbox"]'
       );
       let lastChecked;
-      let inbetween = false;
+      let inBetween = false;
       function handleCheck(e) {
         if (e.shiftKey && this.checked) {
           checkboxes.forEach((checkbox) => {
             console.log(checkbox);
             if (checkbox === this || checkbox === lastChecked) {
-              inbetween = !inbetween;
+              inBetween = !inBetween;
+              console.log("Starting to check them in between");
+            }
+            if (inBetween) {
+              checkbox.checked = true;
             }
           });
         }
+        lastChecked = this;
       }
 
       checkboxes.forEach((checkbox) =>
