@@ -15,6 +15,9 @@ body {
 *:after {
   box-sizing: inherit;
 }
+.fixed-nav .site-wrap {
+  transform: scale(1);
+}
 
 .site-wrap {
   max-width: 700px;
