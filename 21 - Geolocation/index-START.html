@@ -79,7 +79,7 @@
         width: 250px;
         overflow: hidden;
         transition: all 0.2s;
-        transform: rotate(0deg);
+        transform: auto;
         display: inline-block;
       }
 
@@ -102,13 +102,17 @@
 
       navigator.geolocation.watchPosition(
         (data) => {
-          console.log(data);
-          speed.textContent = data.coords.speed;
-          arrow.style.transform = `rotate(${data.coords.heading}deg)`;
+          speed.textContent = Math.round(data.coords.speed);
+          arrow.style.transforms = `rotate(${data.coords.heading}deg)`;
         },
         (err) => {
           console.error(err);
         }
+        geolocation.setOptions({
+          enableHighAccuracy: true,
+          timeout: 5000,
+          maximumAge: 0,
+        })
       );
     </script>
   </body>
