@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <title>👀👀👀Follow Along Nav</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="https://fav.farm/🔥" />
+    <link rel="icon" href="https://fav.farm/✅" />
   </head>
   <body>
     <nav>
@@ -50,20 +50,21 @@
       const triggers = document.querySelectorAll("a");
       const highlight = document.createElement("span");
       highlight.classList.add("highlight");
-      document.body.append(highlight);
+      document.body.appendChild(highlight);
 
       function highlightLink() {
+        const linkCoords = this.getBoundingClientRect();
+        console.log(linkCoords);
         const coords = {
-          width: this.offsetWidth,
-          height: this.offsetHeight,
-          top: this.offsetTop,
-          left: this.offsetLeft,
+          width: linkCoords.width,
+          height: linkCoords.height,
+          top: linkCoords.top + window.scrollY,
+          left: linkCoords.left + window.scrollX,
         };
-        const Coords = this.getBoundingClientRect();
-        console.log(Coords);
-        highlight.style.width = `${Coords.width}px`;
-        highlight.style.height = `${Coords.height}px`;
-        highlight.style.transform = `translate(${Coords.left}px, ${Coords.top}px)`;
+
+        highlight.style.width = `${coords.width}px`;
+        highlight.style.height = `${coords.height}px`;
+        highlight.style.transform = `translate(${coords.left}px, ${coords.top}px)`;
       }
 
       triggers.forEach((a) => a.addEventListener("mouseenter", highlightLink));
