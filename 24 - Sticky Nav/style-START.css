@@ -30,8 +30,8 @@ body {
 header {
   text-align: center;
   height: 50vh;
-  background: url(https://source.unsplash.com/GKN6rpDr0EI/960x640) bottom center
-    no-repeat;
+  background: url(https://images.unsplash.com/photo-1506361797048-46a149213205?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
+    bottom center no-repeat;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -51,6 +51,11 @@ nav {
   transition: all 0.5s;
   position: relative;
   z-index: 1;
+}
+
+.fixed-nav nav {
+  position: fixed;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {

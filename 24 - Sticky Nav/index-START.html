@@ -28,7 +28,7 @@
         tempora rerum, est autem cupiditate, corporis a qui libero ipsum
         delectus quidem dolor at nulla, adipisci veniam in reiciendis aut
         asperiores omnis blanditiis quod quas laborum nam! Fuga ad tempora in
-        aspernatur pariatur fugit quibusdam dolores sunt esse magni, ut,
+        aspernatur pariatur fugit quibus dam dolores sunt esse magni, ut,
         dignissimos.
       </p>
       <p>
@@ -271,6 +271,19 @@
       </p>
     </div>
 
-    <script></script>
+    <script>
+      const nav = document.querySelector("#main");
+      const topOfNav = nav.offsetTop;
+      function fixNav() {
+        if (window.scrollY >= topOfNav) {
+          document.body.style.paddingTop = nav.offsetTop + "px";
+          document.body.classList.add("fixed-nav");
+        } else {
+          document.body.style.paddingTop = 0;
+          document.body.classList.remove("fixed-nav");
+        }
+      }
+      window.addEventListener("scroll", fixNav);
+    </script>
   </body>
 </html>
