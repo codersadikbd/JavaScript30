@@ -53,8 +53,17 @@
       document.body.append(highlight);
 
       function highlightLink() {
-        const linkCoords = this.getBoundingClientRect();
-        console.log(linkCoords);
+        const coords = {
+          width: this.offsetWidth,
+          height: this.offsetHeight,
+          top: this.offsetTop,
+          left: this.offsetLeft,
+        };
+        const Coords = this.getBoundingClientRect();
+        console.log(Coords);
+        highlight.style.width = `${Coords.width}px`;
+        highlight.style.height = `${Coords.height}px`;
+        highlight.style.transform = `translate(${Coords.left}px, ${Coords.top}px)`;
       }
 
       triggers.forEach((a) => a.addEventListener("mouseenter", highlightLink));
