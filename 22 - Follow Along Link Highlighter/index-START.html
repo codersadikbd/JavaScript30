@@ -59,8 +59,8 @@
           top: this.offsetTop,
           left: this.offsetLeft,
         };
-        const Coords = this.getBoundingClientRect();
-        console.log(Coords);
+        const linkCoords = this.getBoundingClientRect();
+        console.log(linkCoords);
         highlight.style.width = `${Coords.width}px`;
         highlight.style.height = `${Coords.height}px`;
         highlight.style.transform = `translate(${Coords.left}px, ${Coords.top}px)`;
